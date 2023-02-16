@@ -1,0 +1,37 @@
+#domain: 1.500 0.900 0.002
+#dx_dy_dz: 0.002 0.002 0.002
+#time_window: 30e-9
+#material: 6 0 1 0 half_space
+#material: 81 0.05 1 0 water
+#material: 4 0.004 1 0 layer2
+#material: 9 0.005 1 0 layer3
+#material: 12 0.003 1 0 layer4
+#material: 3.5 0 1 0 pvc
+#waveform: ricker 1 800e6 my_ricker
+#hertzian_dipole: z 0.040 0.800 0 my_ricker
+#rx: 0.045 0.800 0
+#src_steps: 0.02 0 0
+#rx_steps: 0.02 0 0
+#box: 0 0.8 0 1.5 0.9 0.002 free_space
+#box: 0 0.7 0 1.5 0.8 0.002 layer2
+#box: 0 0.60 0 1.5 0.70 0.002 layer3
+#box: 0 0 0 1.5 0.60 0.002 layer4
+
+#cylinder: 0.75 0.50 0 0.75 0.50 0.002 0.05 pvc
+#cylinder: 0.75 0.50 0 0.75 0.50 0.002 0.04 water
+
+#cylinder: 0.9 0.15 0 0.9 0.15 0.002 0.04 pec
+#cylinder: 0.9 0.15 0 0.9 0.15 0.002 0.03 free_space
+
+#cylinder: 0.6 0.10 0 0.6 0.10 0.002 0.04 pvc
+#cylinder: 0.6 0.10 0 0.6 0.10 0.002 0.03 free_space
+
+cylinder: 0.4 0.09 0 0.4 0.09 0.002 0.04 pvc
+cylinder: 0.4 0.09 0 0.4 0.09 0.002 0.03 free_space
+
+python:
+for i in range(1, 300):
+    print('#snapshot: 0 0 0 1.500 0.900 0.002 0.002 0.002 0.002 {} snapshot{}'.format((i/10)*1e-9, i))
+end_python:
+
+geometry_view: 0 0 0 1.500 0.900 0.002 0.002 0.002 0.002 tt n

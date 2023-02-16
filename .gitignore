@@ -1,0 +1,8 @@
+.idea/
+Deeplearning/
+imgs/*
+in/*
+out/*
+!imgs/.gitkeep
+!in/.gitkeep
+!out/.gitkeep
